@@ -1,0 +1,15 @@
+<p>product works!</p>
+
+<button mat-raised-button color="primary" (click)="fetchProduct()">fetch products</button>
+
+<div *ngIf="error$ | async as message" >
+     {{message}}
+</div>
+
+<div *ngIf="productList$ | async as productList">
+  <ul *ngFor="let product of productList">
+    <li>{{product.id}}</li>
+    <li>{{product.name}}</li>
+    <li>{{product.price}}</li>
+  </ul>
+</div>
