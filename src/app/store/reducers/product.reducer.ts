@@ -21,6 +21,9 @@ const initialState: ProductState = {
 export function productReducer(state: ProductState = initialState,  action: ProductAction) {
     switch (action.type) {
       case ProductActionTypes.FETCH_PRODUCT_REQUEST:
+  /*      return Object.assign({}, state, {
+        loading: true
+      });*/
         return {...state, loading: true};
       case ProductActionTypes.FETCH_PRODUCT_SUCCESS:
         return {...state, loading: false, productList: action.payload};
